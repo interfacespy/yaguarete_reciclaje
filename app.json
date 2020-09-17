@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "BxProject",
+    "slug": "yaguaretereciclaje",
+    "privacy": "public",
+    "sdkVersion": "35.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "description": ""
+  }
+}
