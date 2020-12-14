@@ -5,11 +5,11 @@ function CdeCard(props) {
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.bodyContent}>
-        <Text style={styles.ciudadDelEste}>Ciudad del Este</Text>
+        <Text style={styles.cde}>Ciudad del Este</Text>
         <Text style={styles.subtitleHere}>Calle Amambay, Barrio Santa Ana</Text>
       </View>
       <Image
-        source={require("../assets/images/marker6.png")}
+        source={require("../assets/images/marker-white.png")}
         resizeMode="contain"
         style={styles.image}
       ></Image>
@@ -27,39 +27,39 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOffset: {
       width: -2,
-      height: 2
+      height: 2,
     },
     shadowOpacity: 0.1,
     shadowRadius: 1.5,
     elevation: 3,
-    overflow: "hidden"
+    overflow: "hidden",
   },
   bodyContent: {
     padding: 16,
     paddingTop: 24,
     justifyContent: "center",
-    backgroundColor: "rgba(193,193,193,1)"
+    backgroundColor: "#c60021",
   },
-  ciudadDelEste: {
-    fontFamily: "roboto-700",
+  cde: {
+    fontFamily: "open-sans-700",
     fontSize: 24,
     color: "rgba(255,255,255,1)",
     paddingBottom: 12,
-    marginLeft: 45
+    marginLeft: 45,
   },
   subtitleHere: {
     fontFamily: "open-sans-regular",
     fontSize: 14,
     color: "rgba(255,255,255,1)",
-    lineHeight: 16
+    lineHeight: 16,
   },
   image: {
     top: -1,
     left: 17,
     width: 34,
     height: 74,
-    position: "absolute"
-  }
+    position: "absolute",
+  },
 });
 
 export default CdeCard;

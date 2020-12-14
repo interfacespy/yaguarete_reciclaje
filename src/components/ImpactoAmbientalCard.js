@@ -57,7 +57,7 @@ function ImpactoAmbientalCard(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#c60021",
     overflow: "hidden",
     flex: 1,
   },
@@ -68,13 +68,13 @@ const styles = StyleSheet.create({
   tittleStyle: {
     fontFamily: "open-sans-700",
     fontSize: 14,
-    color: "rgba(54,62,63,1)",
+    color: "#FFF",
     paddingBottom: 12,
   },
   subtitleStyle: {
     fontFamily: "open-sans-regular",
     fontSize: 14,
-    color: "rgba(54,62,63,1)",
+    color: "#FFF",
     lineHeight: 16,
     width: Dimensions.get("window").width - 40,
     textAlign: "justify",

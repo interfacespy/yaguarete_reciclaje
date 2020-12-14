@@ -7,12 +7,13 @@ import {
   Dimensions,
   Text,
 } from "react-native";
-import AlianzasCard from "../components/AlianzasCard";
 import YaguareteHeader from "../components/YaguareteHeader";
+import Footer from "../components/Footer";
 
 function Alianzas(props) {
   return (
     <View style={styles.container}>
+      <View style={styles.margenSeguridad}></View>
       <View style={styles.scrollArea}>
         <ScrollView
           contentContainerStyle={styles.scrollArea_contentContainerStyle}
@@ -55,7 +56,13 @@ function Alianzas(props) {
               resizeMode="contain"
               style={styles.wwf}
             ></Image>
+            <Image
+              source={require("../assets/images/MTESS.png")}
+              resizeMode="contain"
+              style={styles.mtees}
+            ></Image>
           </View>
+          <Footer></Footer>
         </ScrollView>
       </View>
     </View>
@@ -90,7 +97,7 @@ const styles = StyleSheet.create({
   alianzas: {
     fontFamily: "open-sans-700",
     fontSize: 24,
-    color: "rgba(54,62,63,1)",
+    color: "#c60021",
     paddingBottom: 12,
     textAlign: "center",
   },
@@ -115,17 +122,24 @@ const styles = StyleSheet.create({
   wwf: {
     width: 250,
     height: 200,
-    marginTop: 50,
+  },
+  mtees: {
+    width: 250,
+    height: 100,
+  },
+  margenSeguridad: {
+    height: "3%",
+    backgroundColor: "rgba(255,255,255,1)",
   },
   header: {
     width: Dimensions.get("window").width,
-    height: 115,
-    backgroundColor: "rgba(193,193,193,1)",
+    height: 100,
+    backgroundColor: "#c60021",
   },
   yaguareteHeader: {
-    height: 115,
+    height: 100,
     width: Dimensions.get("window").width,
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#c60021",
   },
 });
 

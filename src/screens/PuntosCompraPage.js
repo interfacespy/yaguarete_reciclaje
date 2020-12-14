@@ -1,15 +1,27 @@
-import React, { Component } from "react";
+import React, { Component, useRef } from "react";
 import { StyleSheet, View, ScrollView } from "react-native";
 import PuntosCompraCard from "../components/PuntosCompraCard";
 import YaguareteHeader from "../components/YaguareteHeader";
 import { Dimensions } from "react-native";
+import Footer from "../components/Footer";
 
 function PuntosCompraPage(props) {
+  var scrollRef = useRef(<ScrollView></ScrollView>);
+
+  const onFabPress = () => {
+    scrollRef.current?.scrollTo({
+      y: 0,
+      animated: true,
+    });
+  };
+
   return (
     <View style={styles.container}>
+      <View style={styles.margenSeguridad}></View>
       <View style={styles.scrollArea}>
         <ScrollView
           contentContainerStyle={styles.scrollArea_contentContainerStyle}
+          ref={scrollRef}
         >
           <View style={styles.header}>
             <YaguareteHeader
@@ -17,7 +29,11 @@ function PuntosCompraPage(props) {
               navigation={props.navigation}
             ></YaguareteHeader>
           </View>
-          <PuntosCompraCard style={styles.puntosCompraCard}></PuntosCompraCard>
+          <PuntosCompraCard
+            style={styles.puntosCompraCard}
+            onPress={onFabPress}
+          ></PuntosCompraCard>
+          <Footer></Footer>
         </ScrollView>
       </View>
     </View>
@@ -41,20 +57,22 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   puntosCompraCard: {
-    height: 1206,
     width: Dimensions.get("window").width,
-    top: 0,
+    marginBottom: 10,
+  },
+  margenSeguridad: {
+    height: "3%",
+    backgroundColor: "rgba(255,255,255,1)",
   },
   header: {
     width: Dimensions.get("window").width,
-    height: 115,
-    backgroundColor: "rgba(193,193,193,1)",
-    marginTop: 0,
+    height: 100,
+    backgroundColor: "#c60021",
   },
   yaguareteHeader: {
-    height: 115,
+    height: 100,
     width: Dimensions.get("window").width,
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#c60021",
   },
 });
 

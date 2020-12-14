@@ -9,20 +9,20 @@ import {
 } from "react-native";
 
 function GrupoYaguareteCard(props) {
-  _handleKartontec = () => {
+  var _handleKartontec = () => {
     Linking.openURL("/http://www.kartotec.com.py/es/");
   };
-  _handleYaguarete = () => {
+  var _handleYaguarete = () => {
     Linking.openURL("http://www.cysa.com.py/");
   };
-  _handleWeig = () => {
+  var _handleWeig = () => {
     Linking.openURL("https://www.weig-group.de/en/");
   };
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.imageRow}>
         <View>
-          <TouchableOpacity onPress={this._handleKartontec}>
+          <TouchableOpacity onPress={_handleKartontec}>
             <Image
               source={require("../assets/images/Screenshot_from_2020-09-11_21-43-591.png")}
               resizeMode="contain"
@@ -36,7 +36,7 @@ function GrupoYaguareteCard(props) {
           </TouchableOpacity>
         </View>
         <View>
-          <TouchableOpacity onPress={this._handleYaguarete}>
+          <TouchableOpacity onPress={_handleYaguarete}>
             <Image
               source={require("../assets/images/Screenshot_from_2020-09-11_21-46-381.png")}
               resizeMode="contain"
@@ -50,7 +50,7 @@ function GrupoYaguareteCard(props) {
           </TouchableOpacity>
         </View>
         <View>
-          <TouchableOpacity onPress={this._handleWeig}>
+          <TouchableOpacity onPress={_handleWeig}>
             <Image
               source={require("../assets/images/Screenshot_from_2020-09-11_21-47-371.png")}
               resizeMode="contain"

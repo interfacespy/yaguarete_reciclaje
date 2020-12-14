@@ -11,7 +11,7 @@ function LimpioCard(props) {
         </Text>
       </View>
       <Image
-        source={require("../assets/images/marker4.png")}
+        source={require("../assets/images/marker-white.png")}
         resizeMode="contain"
         style={styles.image}
       ></Image>
@@ -25,44 +25,43 @@ const styles = StyleSheet.create({
     borderRadius: 2,
     borderColor: "#CCC",
     flexWrap: "nowrap",
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#FFF",
     shadowColor: "#000",
     shadowOffset: {
       width: -2,
-      height: 2
+      height: 2,
     },
     shadowOpacity: 0.1,
     shadowRadius: 1.5,
     elevation: 3,
-    overflow: "hidden"
+    overflow: "hidden",
   },
   bodyContent: {
     padding: 16,
     paddingTop: 24,
     justifyContent: "center",
-    height: 90,
-    width: 333
+    backgroundColor: "#c60021",
   },
   limpio: {
-    fontFamily: "roboto-700",
+    fontFamily: "open-sans-700",
     fontSize: 24,
     color: "rgba(255,255,255,1)",
     paddingBottom: 12,
-    marginLeft: 45
+    marginLeft: 45,
   },
   subtitleHere: {
     fontFamily: "open-sans-regular",
     fontSize: 14,
     color: "rgba(255,255,255,1)",
-    lineHeight: 16
+    lineHeight: 16,
   },
   image: {
     top: -1,
     left: 17,
     width: 34,
-    height: 69,
-    position: "absolute"
-  }
+    height: 74,
+    position: "absolute",
+  },
 });
 
 export default LimpioCard;

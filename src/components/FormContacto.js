@@ -22,7 +22,7 @@ function FormContacto(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "rgba(255,255,255,1)",
     overflow: "hidden",
     flex: 1,
     borderRadius: 2,
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width - 40,
     backgroundColor: "#fff",
     borderWidth: 1,
-    borderColor: "#000000",
+    borderColor: "#c60021",
     marginTop: 20,
     alignSelf: "center",
   },
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width - 40,
     backgroundColor: "#fff",
     borderWidth: 1,
-    borderColor: "#000000",
+    borderColor: "#c60021",
     marginTop: 20,
     alignSelf: "center",
   },

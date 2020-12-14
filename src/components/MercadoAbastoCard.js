@@ -4,16 +4,14 @@ import { StyleSheet, View, Text, Image } from "react-native";
 function MercadoAbastoCard(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <View style={styles.cardBody}>
-        <View style={styles.bodyContent}>
-          <Text style={styles.mercadoDeAbasto}>Mercado de Abasto</Text>
-          <Text style={styles.subtitleHere}>
-            Avda. Defensores del Chaco Nº 181.
-          </Text>
-        </View>
+      <View style={styles.bodyContent}>
+        <Text style={styles.mercadoDeAbasto}>Mercado de Abasto</Text>
+        <Text style={styles.subtitleHere}>
+          Avda. Defensores del Chaco c/ Toba (frente a casa Grutter)
+        </Text>
       </View>
       <Image
-        source={require("../assets/images/marker3.png")}
+        source={require("../assets/images/marker-white.png")}
         resizeMode="contain"
         style={styles.image}
       ></Image>
@@ -27,51 +25,43 @@ const styles = StyleSheet.create({
     borderRadius: 2,
     borderColor: "#CCC",
     flexWrap: "nowrap",
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#FFF",
     shadowColor: "#000",
     shadowOffset: {
       width: -2,
-      height: 2
+      height: 2,
     },
     shadowOpacity: 0.1,
     shadowRadius: 1.5,
     elevation: 3,
-    overflow: "hidden"
-  },
-  cardBody: {
-    flexDirection: "row",
-    justifyContent: "space-between"
+    overflow: "hidden",
   },
   bodyContent: {
     padding: 16,
     paddingTop: 24,
-    flex: 1
+    justifyContent: "center",
+    backgroundColor: "#c60021",
   },
   mercadoDeAbasto: {
     fontFamily: "open-sans-700",
     fontSize: 24,
     color: "rgba(255,255,255,1)",
     paddingBottom: 12,
-    marginLeft: 45
+    marginLeft: 45,
   },
   subtitleHere: {
-    fontFamily: "roboto-regular",
+    fontFamily: "open-sans-regular",
     fontSize: 14,
     color: "rgba(255,255,255,1)",
-    lineHeight: 16
+    lineHeight: 16,
   },
   image: {
-    top: 0,
+    top: -1,
     left: 17,
     width: 34,
     height: 74,
     position: "absolute",
-    transform: [
-      {
-        rotate: "-2.00deg"
-      }
-    ]
-  }
+  },
 });
 
 export default MercadoAbastoCard;

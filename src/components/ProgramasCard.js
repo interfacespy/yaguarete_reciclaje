@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     height: 90,
   },
   programas: {
-    fontFamily: "roboto-700",
+    fontFamily: "open-sans-700",
     fontSize: 24,
     color: "rgba(54,62,63,1)",
     paddingBottom: 12,

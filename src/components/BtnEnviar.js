@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   enviar: {
     color: "#fff",
     fontSize: 14,
-    fontFamily: "roboto-700",
+    fontFamily: "open-sans-700",
   },
 });
 

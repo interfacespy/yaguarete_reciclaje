@@ -25,7 +25,7 @@ function MisionCard(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "rgba(255,255,255,1)",
+    backgroundColor: "#FFF",
     overflow: "hidden",
     flex: 1,
   },
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   mision: {
     fontFamily: "open-sans-700",
     fontSize: 24,
-    color: "rgba(198,0,33,1)",
+    color: "#c60021",
     paddingBottom: 12,
     textAlign: "center",
     alignSelf: "center",
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width,
     height: 255,
     position: "absolute",
-    backgroundColor: "rgba(255,255,255,1)",
+    backgroundColor: "#FFF",
   },
 });
 

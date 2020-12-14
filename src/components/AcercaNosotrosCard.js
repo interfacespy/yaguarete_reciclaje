@@ -7,10 +7,10 @@ function AcercaNosotrosCard(props) {
       <View style={styles.tittleContent}>
         <Text style={styles.acercaNosotros}>ACERCA DE NOSOTROS</Text>
         <Text style={styles.subtitleStyle}>
-          Hace más de 40 años, se funda Cartones Yaguarete S.A. en Paraguay, la
+          Hace más de 42 años, se funda Cartones Yaguarete S.A. en Paraguay, la
           primera industria en el país dedicada al reciclaje de papel y cartón
           en desuso y la producción de Papel y Cartón, aplicando el concepto de
-          una economía circular.{"\n"}
+          una economía circular. {"\n"}
           {"\n"}Este proceso que se inicia en YAGUARETE RECICLAJE - Recicladora
           del Este S.A., encargada de recolectar, clasificar y comercializar
           papeles y cartones en desuso para su utilización como materia prima en
@@ -23,7 +23,8 @@ function AcercaNosotrosCard(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "rgba(193,193,193,1)",
+    //backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#c60021",
     overflow: "hidden",
     flex: 1,
   },
@@ -40,7 +41,8 @@ const styles = StyleSheet.create({
   subtitleStyle: {
     fontFamily: "open-sans-regular",
     fontSize: 14,
-    color: "rgba(54,62,63,1)",
+    //color: "rgba(54,62,63,1)",
+    color: "#FFF",
     lineHeight: 16,
     width: Dimensions.get("window").width - 40,
     textAlign: "justify",

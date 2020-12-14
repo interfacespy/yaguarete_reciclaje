@@ -1,34 +1,104 @@
-import React, { Component } from "react";
-import { StyleSheet, View, Text, Dimensions } from "react-native";
-import PuntosCompraMap from "./PuntosCompraMap";
-import ArtigasCard from "./ArtigasCard";
-import Mercado4Card from "./Mercado4Card";
-import MercadoAbastoCard from "./MercadoAbastoCard";
-import LuqueCard from "./LuqueCard";
-import LimpioCard from "./LimpioCard";
-import VillaElisaCard from "./VillaElisaCard";
-import CdeCard from "./CdeCard";
+import React, { Component, useState, useEffect } from "react";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Dimensions,
+  TouchableOpacity,
+  Image,
+  FlatList,
+  ActivityIndicator,
+} from "react-native";
+import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+
+const Asuncion = {
+  latitude: -25.2819,
+  longitude: -57.6352516,
+  latitudeDelta: 0.8,
+  longitudeDelta: 0.8,
+};
 
 function PuntosCompraCard(props) {
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("http://192.168.0.106:8069/backend_api/get_res_partners", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((json) => setData(json))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+  }, []);
+
+  const [region, setRegion] = useState(Asuncion);
+
+  var _onPressRegion = (x) => {
+    setRegion(x);
+    props.onPress();
+  };
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.tittleContent}>
-        <Text style={styles.puntosDeCompra}>PUNTOS DE COMPRA</Text>
+        <Text style={styles.puntosDeCompra}>PUNTOS DE COMPRAS</Text>
         <Text style={styles.subtitleStyle}>
           Yaguarete Reciclaje cuenta con una red de puntos de compra de papel y
           cartón a nivel nacional. Acércate a nuestros Centros de Acopio, donde
           compramos tus papeles y cartones en desuso!!!
         </Text>
       </View>
-      <View style={styles.bodyContent}>
-        <PuntosCompraMap style={styles.puntosCompraMap}></PuntosCompraMap>
-        <ArtigasCard style={styles.artigasCard}></ArtigasCard>
-        <Mercado4Card style={styles.mercado4Card}></Mercado4Card>
-        <MercadoAbastoCard style={styles.mercadoAbastoCard}></MercadoAbastoCard>
-        <LuqueCard style={styles.luqueCard}></LuqueCard>
-        <LimpioCard style={styles.limpioCard}></LimpioCard>
-        <VillaElisaCard style={styles.villaElisaCard}></VillaElisaCard>
-        <CdeCard style={styles.cdeCard}></CdeCard>
+      <View style={styles.bodyContent1}>
+        <View style={styles.puntosCompraMap}>
+          <MapView style={styles.puntosCompraMap} region={region}>
+            {data.map((val, index) => {
+              return (
+                <MapView.Marker
+                  coordinate={{
+                    latitude: val.latitud,
+                    longitude: val.longitud,
+                  }}
+                  key={val.id}
+                  title={val.name}
+                />
+              );
+            })}
+          </MapView>
+        </View>
+        <View style={{ flex: 1, padding: 24 }}>
+          {isLoading ? (
+            <ActivityIndicator />
+          ) : (
+            <View>
+              {data.map((val, index) => {
+                return (
+                  <TouchableOpacity
+                    key={val.id}
+                    style={styles.card}
+                    onPress={() =>
+                      _onPressRegion({
+                        latitude: val.latitud,
+                        longitude: val.longitud,
+                        latitudeDelta: 0.02,
+                        longitudeDelta: 0.02,
+                      })
+                    }
+                  >
+                    <View style={styles.bodyContent}>
+                      <Text style={styles.tittle}>{val.name}</Text>
+                      <Text style={styles.subtitleHere}>{val.street}</Text>
+                    </View>
+                    <Image
+                      source={require("../assets/images/marker-white.png")}
+                      resizeMode="contain"
+                      style={styles.image}
+                    ></Image>
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+          )}
+        </View>
       </View>
     </View>
   );
@@ -44,16 +114,16 @@ const styles = StyleSheet.create({
     padding: 15,
     flex: 1,
   },
-  bodyContent: {
+  bodyContent1: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    top: -600,
   },
+
   puntosDeCompra: {
     fontFamily: "open-sans-700",
     fontSize: 24,
-    color: "rgba(54,62,63,1)",
+    color: "#c60021",
     paddingBottom: 12,
     textAlign: "center",
     alignItems: "center",
@@ -70,47 +140,36 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width - 40,
     height: 300,
   },
-  artigasCard: {
-    height: 90,
+  card: {
     width: Dimensions.get("window").width - 40,
-    position: "absolute",
-    top: 459,
+    margin: 10,
+    marginBottom: 0,
   },
-  mercado4Card: {
-    height: 90,
-    width: Dimensions.get("window").width - 40,
-    position: "absolute",
-    top: 559,
+  bodyContent: {
+    padding: 16,
+    paddingTop: 24,
+    justifyContent: "center",
+    backgroundColor: "#c60021",
   },
-  mercadoAbastoCard: {
-    top: 659,
-    width: Dimensions.get("window").width - 40,
-    height: 90,
-    position: "absolute",
+  tittle: {
+    fontFamily: "open-sans-700",
+    fontSize: 22,
+    color: "rgba(255,255,255,1)",
+    paddingBottom: 12,
+    marginLeft: 45,
   },
-  luqueCard: {
-    top: 759,
-    width: Dimensions.get("window").width - 40,
-    height: 90,
-    position: "absolute",
+  subtitleHere: {
+    fontFamily: "open-sans-regular",
+    fontSize: 14,
+    color: "rgba(255,255,255,1)",
+    lineHeight: 16,
   },
-  limpioCard: {
-    top: 859,
-    width: Dimensions.get("window").width - 40,
-    height: 90,
+  image: {
+    top: -1,
+    left: 17,
+    width: 34,
+    height: 74,
     position: "absolute",
-  },
-  villaElisaCard: {
-    top: 959,
-    width: Dimensions.get("window").width - 40,
-    height: 90,
-    position: "absolute",
-  },
-  cdeCard: {
-    height: 90,
-    width: Dimensions.get("window").width - 40,
-    position: "absolute",
-    top: 1059,
   },
 });
 

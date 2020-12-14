@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import {
   StyleSheet,
   View,
@@ -6,58 +6,117 @@ import {
   Dimensions,
   TouchableOpacity,
   TextInput,
+  Alert,
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 function CardSimulador(props) {
+  const [numMostrar, setNumMostrar] = useState("");
+
+  var _calculoSimulador = (x) => {
+    if (x > 0) {
+      props.setLitrosAgua(parseInt(parseInt(x) * 2));
+      props.setCo2(parseInt(parseInt(x) * 0.9));
+      props.setVertederos(parseInt(parseInt(x) * 0.002));
+      props.setArboles(parseInt(parseInt(x) * 0.014));
+    }
+  };
+
+  var _onPressNum = (x) => {
+    num = parseInt(numMostrar + x);
+    if (num > 999999999) {
+      Alert.alert("Error", "No puede ingresar un número mayor a 999.999.999");
+    } else {
+      setNumMostrar(numMostrar + x);
+      _calculoSimulador(numMostrar + x);
+    }
+  };
+
+  var _onPressClear = () => {
+    setNumMostrar("");
+    props.setLitrosAgua("");
+    props.setCo2("");
+    props.setVertederos("");
+    props.setArboles("");
+  };
+
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.calculadora}>
         <View style={styles.containerInput}>
-          <TextInput
-            placeholder=""
-            keyboardType="numeric"
-            style={styles.textInput}
-          ></TextInput>
+          <TextInput keyboardType="numeric" value={numMostrar}></TextInput>
         </View>
         <View style={styles.primeraLinea}>
-          <TouchableOpacity style={styles.containerButton}>
+          <TouchableOpacity
+            style={styles.containerButton}
+            onPress={() => _onPressNum("1")}
+          >
             <Icon name="numeric-1" style={styles.caption}></Icon>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.leftDiez}>
+          <TouchableOpacity
+            style={styles.leftDiez}
+            onPress={() => _onPressNum("2")}
+          >
             <Icon name="numeric-2" style={styles.caption}></Icon>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.leftDiez}>
+          <TouchableOpacity
+            style={styles.leftDiez}
+            onPress={() => _onPressNum("3")}
+          >
             <Icon name="numeric-3" style={styles.caption}></Icon>
           </TouchableOpacity>
         </View>
         <View style={styles.segundaLinea}>
-          <TouchableOpacity style={styles.containerButton}>
+          <TouchableOpacity
+            style={styles.containerButton}
+            onPress={() => _onPressNum("4")}
+          >
             <Icon name="numeric-4" style={styles.caption}></Icon>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.leftDiez}>
+          <TouchableOpacity
+            style={styles.leftDiez}
+            onPress={() => _onPressNum("5")}
+          >
             <Icon name="numeric-5" style={styles.caption}></Icon>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.leftDiez}>
+          <TouchableOpacity
+            style={styles.leftDiez}
+            onPress={() => _onPressNum("6")}
+          >
             <Icon name="numeric-6" style={styles.caption}></Icon>
           </TouchableOpacity>
         </View>
         <View style={styles.terceraLinea}>
-          <TouchableOpacity style={styles.containerButton}>
+          <TouchableOpacity
+            style={styles.containerButton}
+            onPress={() => _onPressNum("7")}
+          >
             <Icon name="numeric-7" style={styles.caption}></Icon>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.leftDiez}>
+          <TouchableOpacity
+            style={styles.leftDiez}
+            onPress={() => _onPressNum("8")}
+          >
             <Icon name="numeric-8" style={styles.caption}></Icon>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.leftDiez}>
+          <TouchableOpacity
+            style={styles.leftDiez}
+            onPress={() => _onPressNum("9")}
+          >
             <Icon name="numeric-9" style={styles.caption}></Icon>
           </TouchableOpacity>
         </View>
         <View style={styles.cuartaLinea}>
-          <TouchableOpacity style={styles.containerCero}>
+          <TouchableOpacity
+            style={styles.containerCero}
+            onPress={() => _onPressNum("0")}
+          >
             <Text style={styles.caption}>0</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.leftDiez}>
+          <TouchableOpacity
+            style={styles.leftDiez}
+            onPress={() => _onPressClear()}
+          >
             <Icon name="close" style={styles.caption}></Icon>
           </TouchableOpacity>
         </View>

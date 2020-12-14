@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     paddingRight: 16,
   },
   caption: {
-    color: "rgba(54,62,63,1)",
+    color: "#FFF",
     fontSize: 14,
     fontFamily: "open-sans-regular",
     alignSelf: "flex-start",

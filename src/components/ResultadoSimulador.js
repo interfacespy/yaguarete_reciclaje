@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { StyleSheet, View, Image, Text, Dimensions } from "react-native";
 
 function ResultadoSimulador(props) {
@@ -10,7 +10,9 @@ function ResultadoSimulador(props) {
           resizeMode="contain"
           style={styles.imageRes}
         ></Image>
-        <Text style={styles.labelRes}>200 litros de agua ahorrados</Text>
+        <Text style={styles.labelRes}>
+          {props.litrosAgua} litros de agua ahorrados
+        </Text>
       </View>
       <View style={styles.contRes}>
         <Image
@@ -18,7 +20,7 @@ function ResultadoSimulador(props) {
           resizeMode="contain"
           style={styles.imageRes}
         ></Image>
-        <Text style={styles.labelRes}>90 kg. de CO2 no emitidos</Text>
+        <Text style={styles.labelRes}>{props.co2} kg. de CO2 no emitidos</Text>
       </View>
       <View style={styles.contRes}>
         <Image
@@ -27,7 +29,7 @@ function ResultadoSimulador(props) {
           style={styles.imageRes}
         ></Image>
         <Text style={styles.labelRes}>
-          0 metros cúbicos ahorrados en vertederos
+          {props.vertederos} metros cúbicos ahorrados en vertederos
         </Text>
       </View>
       <View style={styles.contRes}>
@@ -36,7 +38,9 @@ function ResultadoSimulador(props) {
           resizeMode="contain"
           style={styles.imageRes}
         ></Image>
-        <Text style={styles.labelRes}>1 árboles salvados de ser talados</Text>
+        <Text style={styles.labelRes}>
+          {props.arboles} árboles salvados de ser talados
+        </Text>
       </View>
     </View>
   );
@@ -44,19 +48,19 @@ function ResultadoSimulador(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FFF",
+    backgroundColor: "#c60021",
     overflow: "hidden",
     flex: 1,
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 2,
-    borderColor: "#CCC",
+    borderColor: "#c60021",
     shadowColor: "#000",
     shadowOffset: {
-      width: -2,
+      width: 4,
       height: 2,
     },
     shadowOpacity: 0.1,
-    shadowRadius: 1.5,
+    shadowRadius: 1,
     elevation: 3,
   },
   contRes: {
@@ -74,7 +78,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
     position: "absolute",
     fontFamily: "open-sans-regular",
-    color: "rgba(54,62,63,1)",
+    color: "#FFF",
     width: Dimensions.get("window").width - 40,
     height: 40,
     fontSize: 14,

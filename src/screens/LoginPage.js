@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Dimensions, ScrollView } from "react-native";
 import Login from "../components/Login";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import Footer from "../components/Footer";
 
 function LoginPage(props) {
   return (
@@ -11,6 +11,7 @@ function LoginPage(props) {
           contentContainerStyle={styles.scrollArea_contentContainerStyle}
         >
           <Login style={styles.login} navigation={props.navigation}></Login>
+          <Footer></Footer>
         </ScrollView>
       </View>
     </View>
@@ -20,18 +21,14 @@ function LoginPage(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#c60021",
   },
   scrollArea: {
-    justifyContent: "center",
-    alignItems: "center",
     width: Dimensions.get("window").width,
     marginTop: 0,
   },
   scrollArea_contentContainerStyle: {
     width: Dimensions.get("window").width,
-    justifyContent: "center",
-    alignItems: "center",
   },
   login: {
     width: Dimensions.get("window").width,
