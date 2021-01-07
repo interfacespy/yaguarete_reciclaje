@@ -5,7 +5,12 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 function UserLabel(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <TextInput placeholder="Usuario" style={styles.inputStyle}></TextInput>
+      <TextInput
+        caretHidden
+        placeholder="Usuario"
+        style={styles.inputStyle}
+        onChangeText={(text) => props.setEmail(text)}
+      ></TextInput>
       <Icon name="account" style={styles.iconStyle}></Icon>
     </View>
   );
@@ -17,7 +22,7 @@ const styles = StyleSheet.create({
     borderColor: "#D9D5DC",
     backgroundColor: "transparent",
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
   },
   inputStyle: {
     color: "#000",
@@ -28,13 +33,13 @@ const styles = StyleSheet.create({
     lineHeight: 16,
     paddingTop: 14,
     paddingBottom: 8,
-    paddingLeft: 20
+    paddingLeft: 20,
   },
   iconStyle: {
     color: "#616161",
     fontSize: 24,
-    paddingRight: 8
-  }
+    paddingRight: 8,
+  },
 });
 
 export default UserLabel;

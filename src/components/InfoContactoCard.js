@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
   titleStyle: {
     fontFamily: "open-sans-700",
-    fontSize: 24,
+    fontSize: 22,
     color: "rgba(198,0,33,1)",
     paddingBottom: 12,
   },

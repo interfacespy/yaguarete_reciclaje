@@ -23,7 +23,8 @@ function VisionCard2(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "rgba(193,193,193,1)",
+    //backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#c60021",
     overflow: "hidden",
     flex: 1,
   },
@@ -34,7 +35,8 @@ const styles = StyleSheet.create({
   vision: {
     fontFamily: "open-sans-700",
     fontSize: 24,
-    color: "rgba(198,0,33,1)",
+    //color: "rgba(198,0,33,1)",
+    color: "#FFF",
     paddingBottom: 12,
     textAlign: "center",
     alignSelf: "center",
@@ -42,7 +44,8 @@ const styles = StyleSheet.create({
   subtitleStyle: {
     fontFamily: "open-sans-regular",
     fontSize: 14,
-    color: "rgba(54,62,63,1)",
+    //color: "rgba(54,62,63,1)",
+    color: "#FFF",
     lineHeight: 16,
     width: Dimensions.get("window").width - 40,
     textAlign: "justify",
@@ -54,7 +57,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width,
     height: 255,
     position: "absolute",
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#c60021",
   },
 });
 

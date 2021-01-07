@@ -28,10 +28,9 @@ function CrecemosReciclandoCard(props) {
           mayor cantidad de residuos que pueden ser re-utilizados como materia
           prima en procesos productivos, generado un impacto ambiental positivo.
           {"\n"}
-          {"\n"}Se busca promover la participación ciudadana en proyectos
-          destinados a tal efecto, fomentando la concientización y la formación
-          de ciudadanos social y ambientalmente responsables, así como la
-          generación de alianzas estratégicas público/privadas.
+          {"\n"}Programa enfocado a fomentar la clasificación de los residuos en
+          origen, especialmente papel y cartón en desuso y fortalecer a los
+          recicladores.
         </Text>
       </View>
     </View>
@@ -40,7 +39,7 @@ function CrecemosReciclandoCard(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#FFF",
     overflow: "hidden",
     flex: 1,
   },
@@ -51,7 +50,7 @@ const styles = StyleSheet.create({
   crecemosReciclando: {
     fontFamily: "open-sans-700",
     fontSize: 24,
-    color: "rgba(255,255,255,1)",
+    color: "#c60021",
     paddingBottom: 12,
     textAlign: "center",
     alignSelf: "center",
@@ -59,7 +58,7 @@ const styles = StyleSheet.create({
   subtitleStyle: {
     fontFamily: "open-sans-regular",
     fontSize: 14,
-    color: "rgba(54,62,63,1)",
+    color: "rgba(54,62,63,1) ",
     lineHeight: 16,
     width: Dimensions.get("window").width - 40,
     textAlign: "justify",

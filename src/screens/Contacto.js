@@ -3,10 +3,12 @@ import { StyleSheet, View, ScrollView, Text, Dimensions } from "react-native";
 import YaguareteHeader from "../components/YaguareteHeader";
 import FormContacto from "../components/FormContacto";
 import InfoContactoCard from "../components/InfoContactoCard";
+import Footer from "../components/Footer";
 
 function Contacto(props) {
   return (
     <View style={styles.container}>
+      <View style={styles.margenSeguridad}></View>
       <View style={styles.scrollArea}>
         <ScrollView
           contentContainerStyle={styles.scrollArea_contentContainerStyle}
@@ -23,6 +25,7 @@ function Contacto(props) {
           <FormContacto style={styles.contactoCard}></FormContacto>
 
           <InfoContactoCard style={styles.infoContactoCard}></InfoContactoCard>
+          <Footer></Footer>
         </ScrollView>
       </View>
     </View>
@@ -52,27 +55,31 @@ const styles = StyleSheet.create({
   contacto: {
     fontFamily: "open-sans-700",
     fontSize: 24,
-    color: "rgba(54,62,63,1)",
+    color: "#c60021",
     paddingBottom: 12,
     textAlign: "center",
   },
+  margenSeguridad: {
+    height: "5%",
+    backgroundColor: "rgba(255,255,255,1)",
+  },
   header: {
     width: Dimensions.get("window").width,
-    height: 115,
-    backgroundColor: "rgba(193,193,193,1)",
+    height: 100,
+    backgroundColor: "#c60021",
   },
   yaguareteHeader: {
-    height: 115,
+    height: 100,
     width: Dimensions.get("window").width,
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#c60021",
   },
   contactoCard: {
     width: Dimensions.get("window").width,
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "rgba(255,255,255,1)",
   },
   infoContactoCard: {
     width: Dimensions.get("window").width,
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "rgba(255,255,255,1)",
   },
 });
 

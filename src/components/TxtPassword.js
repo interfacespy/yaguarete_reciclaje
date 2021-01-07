@@ -1,12 +1,24 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { StyleSheet, View, TextInput } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 function TxtPassword(props) {
+  const [secure, setSecure] = useState(props.secure);
   return (
     <View style={[styles.container, props.style]}>
-      <TextInput placeholder="" style={styles.inputStyle}></TextInput>
-      <Icon name="eye" style={styles.iconStyle}></Icon>
+      <TextInput
+        style={styles.inputStyle}
+        secureTextEntry={secure}
+      ></TextInput>
+      {props.secure && (
+        <Icon
+          style={styles.iconStyle}
+          name={secure ? "eye" : "eye-off-outline"}
+          size={20}
+          color="gray"
+          onPress={() => setSecure(!secure)}
+        />
+      )}
     </View>
   );
 }
@@ -17,7 +29,7 @@ const styles = StyleSheet.create({
     borderColor: "#D9D5DC",
     backgroundColor: "transparent",
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
   },
   inputStyle: {
     color: "#000",
@@ -27,13 +39,14 @@ const styles = StyleSheet.create({
     flex: 1,
     lineHeight: 16,
     paddingTop: 14,
-    paddingBottom: 8
+    paddingBottom: 8,
+    marginLeft: 15,
   },
   iconStyle: {
     color: "#616161",
     fontSize: 24,
-    paddingRight: 8
-  }
+    paddingRight: 8,
+  },
 });
 
 export default TxtPassword;

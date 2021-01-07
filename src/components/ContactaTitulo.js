@@ -16,19 +16,19 @@ const styles = StyleSheet.create({
     borderRadius: 2,
     flexWrap: "nowrap",
     backgroundColor: "#FFF",
-    overflow: "hidden"
+    overflow: "hidden",
   },
   bodyContent: {
     padding: 16,
     paddingTop: 24,
-    justifyContent: "center"
+    justifyContent: "center",
   },
   quienesSomos: {
-    fontFamily: "roboto-700",
+    fontFamily: "open-sans-700",
     fontSize: 24,
     color: "rgba(54,62,63,1)",
-    paddingBottom: 12
-  }
+    paddingBottom: 12,
+  },
 });
 
 export default ContactaTitulo;

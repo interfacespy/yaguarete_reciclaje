@@ -1,11 +1,20 @@
 import React, { Component } from "react";
-import { StyleSheet, View, ScrollView, Image, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  View,
+  ScrollView,
+  Image,
+  Dimensions,
+  Text,
+} from "react-native";
 import YaguareteHeader from "../components/YaguareteHeader";
 import PortadaCard from "../components/PortadaCard";
+import Footer from "../components/Footer";
 
 function Portada(props) {
   return (
     <View style={styles.container}>
+      <View style={styles.margenSeguridad}></View>
       <View style={styles.scrollArea}>
         <ScrollView
           contentContainerStyle={styles.scrollArea_contentContainerStyle}
@@ -22,6 +31,8 @@ function Portada(props) {
             style={styles.image1}
           ></Image>
           <PortadaCard style={styles.portadaCard}></PortadaCard>
+
+          <Footer></Footer>
         </ScrollView>
       </View>
     </View>
@@ -47,23 +58,26 @@ const styles = StyleSheet.create({
   image1: {
     width: Dimensions.get("window").width,
     height: 255,
-   // top: -10,
+    // top: -10,
   },
   portadaCard: {
     height: 375,
     width: Dimensions.get("window").width,
   },
 
+  margenSeguridad: {
+    height: "5%",
+    backgroundColor: "rgba(255,255,255,1)",
+  },
   header: {
     width: Dimensions.get("window").width,
-    height: 115,
-    backgroundColor: "rgba(193,193,193,1)",
-    marginTop: 0,
+    height: 100,
+    backgroundColor: "#c60021",
   },
   yaguareteHeader: {
-    height: 115,
+    height: 100,
     width: Dimensions.get("window").width,
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#c60021",
   },
 });
 

@@ -10,11 +10,11 @@ function Historia(props) {
           Nuestra historia se inicia en Alemania en el año 1931, YAGUARETE
           RECICLAJE, nació en el año 2004 en Ciudad Del Este con el fin de
           captar papeles y cartones en desuso para el proceso de reciclaje y
-          producción de nuevos cartones.{"\n"}
-          {"\n"}Para la industrialización de todas las líneas de productos en
-          Paraguay, se encuentran conformadas empresas que permiten una
-          integración vertical, iniciada con: YAGUARETE RECICLAJE, KARTOTEC,
-          YAGUARETE CARTONES Y YAGUARETE LOGISTICA.
+          producción de nuevos cartones. {"\n"}
+          {"\n"}Para la industrialización de todas las
+          líneas de productos en Paraguay, se encuentran conformadas empresas
+          que permiten una integración vertical, iniciada con: YAGUARETE
+          RECICLAJE, KARTOTEC, YAGUARETE CARTONES Y YAGUARETE LOGISTICA.
         </Text>
       </View>
       <Image
@@ -28,7 +28,7 @@ function Historia(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "rgba(255,255,255,1)",
     overflow: "hidden",
     flex: 1,
   },
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   historia: {
     fontFamily: "open-sans-700",
     fontSize: 24,
-    color: "rgba(198,0,33,1)",
+    color: "#c60021",
     paddingBottom: 12,
     textAlign: "center",
     alignSelf: "center",
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width,
     height: 255,
     position: "absolute",
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "rgba(255,255,255,1)",
   },
 });
 

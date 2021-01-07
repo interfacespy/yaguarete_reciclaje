@@ -38,7 +38,8 @@ const styles = StyleSheet.create({
   titleStyle: {
     fontFamily: "open-sans-700",
     fontSize: 24,
-    color: "rgba(54,62,63,1)",
+    //color: "rgba(54,62,63,1)",
+    color: "#c60021",
     paddingBottom: 10,
     width: Dimensions.get("window").width - 40,
     alignSelf: "center",

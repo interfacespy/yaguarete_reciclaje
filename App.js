@@ -16,10 +16,8 @@ import Programas from "./src/screens/Programas";
 import PuntosCompraPage from "./src/screens/PuntosCompraPage";
 import RegistroPage from "./src/screens/RegistroPage";
 import Simulador from "./src/screens/Simulador";
-import { Ionicons } from "@expo/vector-icons";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
-const Tab = createBottomTabNavigator();
+import Home from "./src/screens/Home";
+import CambiarPassword from "./src/components/CambiarPassword";
 
 const Drawer = createDrawerNavigator();
 
@@ -36,10 +34,11 @@ function App() {
   } else {
     return isLoadingComplete ? (
       <NavigationContainer>
-        <Drawer.Navigator initialRouteName="Portada">
+        <Drawer.Navigator initialRouteName="Home">
+          <Drawer.Screen name="Home" component={Home} />
           <Drawer.Screen name="Inicio" component={Portada} />
           <Drawer.Screen name="Quienes Somos" component={Nosotros} />
-          <Drawer.Screen name="Puntos de Compra" component={PuntosCompraPage} />
+          <Drawer.Screen name="Puntos de Compras" component={PuntosCompraPage} />
           <Drawer.Screen
             name="Materiales que Reciclamos"
             component={MaterialesReciclamos}
@@ -55,6 +54,10 @@ function App() {
           <Drawer.Screen name="Contacto" component={Contacto} />
           <Drawer.Screen name="Iniciar Sesión" component={LoginPage} />
           <Drawer.Screen name="Registrate" component={RegistroPage} />
+          <Drawer.Screen
+            name="Cambiar Contraseña"
+            component={CambiarPassword}
+          />
         </Drawer.Navigator>
       </NavigationContainer>
     ) : (

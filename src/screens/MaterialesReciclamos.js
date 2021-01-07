@@ -12,10 +12,12 @@ import Reciclaje1Card from "../components/Reciclaje1Card";
 import Reciclamos2 from "../components/Reciclamos2";
 import NoReciclablesCard from "../components/NoReciclablesCard";
 import YaguareteHeader from "../components/YaguareteHeader";
+import Footer from "../components/Footer";
 
 function MaterialesReciclamos(props) {
   return (
     <View style={styles.container}>
+      <View style={styles.margenSeguridad}></View>
       <View style={styles.scrollArea}>
         <ScrollView
           contentContainerStyle={styles.scrollArea_contentContainerStyle}
@@ -39,6 +41,7 @@ function MaterialesReciclamos(props) {
           <Reciclaje1Card style={styles.reciclaje1Card}></Reciclaje1Card>
           <Reciclamos2 style={styles.reciclamos2}></Reciclamos2>
           <NoReciclablesCard style={styles.noReciclable}></NoReciclablesCard>
+          <Footer></Footer>
         </ScrollView>
       </View>
     </View>
@@ -64,7 +67,7 @@ const styles = StyleSheet.create({
   image: {
     width: Dimensions.get("window").width,
     height: 255,
-   // top: -10,
+    // top: -10,
   },
   tittleContent: {
     padding: 15,
@@ -73,34 +76,38 @@ const styles = StyleSheet.create({
   materialesReciclamos: {
     fontFamily: "open-sans-700",
     fontSize: 24,
-    color: "rgba(54,62,63,1)",
+    color: "#c60021",
     paddingBottom: 12,
     textAlign: "center",
   },
   reciclaje1Card: {
     height: 500,
     width: Dimensions.get("window").width,
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#c60021",
   },
   reciclamos2: {
     height: 500,
     width: Dimensions.get("window").width,
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#c60021",
   },
   noReciclable: {
-    height: 520,
+    height: 540,
     width: Dimensions.get("window").width,
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#c60021",
+  },
+  margenSeguridad: {
+    height: "5%",
+    backgroundColor: "rgba(255,255,255,1)",
   },
   header: {
     width: Dimensions.get("window").width,
-    height: 115,
-    backgroundColor: "rgba(193,193,193,1)",
+    height: 100,
+    backgroundColor: "#c60021",
   },
   yaguareteHeader: {
-    height: 115,
+    height: 100,
     width: Dimensions.get("window").width,
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#c60021",
   },
 });
 

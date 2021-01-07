@@ -10,10 +10,10 @@ const YaguareteHeader = (props) => {
       <View style={styles.leftIconButton}>
         <TouchableOpacity
           onPress={() => {
-            props.navigation.toggleDrawer();
+            props.navigation.navigate("Home");
           }}
         >
-          <Ionicons name="ios-menu" size={32} />
+          <Icon name="arrow-left" style={styles.icon} size={32}></Icon>
         </TouchableOpacity>
       </View>
       <View
@@ -26,11 +26,11 @@ const YaguareteHeader = (props) => {
       >
         <TouchableOpacity
           onPress={() => {
-            props.navigation.navigate("Inicio");
+            props.navigation.navigate("Home");
           }}
         >
           <Image
-            source={require("../assets/images/Logos--01.png")}
+            source={require("../assets/images/logo-blanco.png")}
             resizeMode="contain"
             style={styles.image}
           ></Image>
@@ -43,7 +43,7 @@ const YaguareteHeader = (props) => {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    backgroundColor: "#3F51B5",
+    backgroundColor: "#c60021",
     flexDirection: "row",
     alignItems: "center",
     padding: 4,
@@ -57,17 +57,20 @@ const styles = StyleSheet.create({
     shadowRadius: 1.2,
     elevation: 3,
   },
+  icon: {
+    color: "#FFF",
+  },
   leftIconButton: {
     width: "10%",
-    backgroundColor: "rgba(193,193,193,1)",
+    //backgroundColor: "rgba(255,255,255,1)",
     height: 50,
     marginLeft: 20,
-    marginTop: 40,
+    marginTop: 20,
   },
   image: {
     width: 200,
     height: 60,
-    marginTop: 20,
+    marginTop: 5,
     marginLeft: "-20%",
   },
 });

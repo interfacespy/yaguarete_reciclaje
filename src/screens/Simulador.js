@@ -1,12 +1,19 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { StyleSheet, View, ScrollView, Dimensions, Text } from "react-native";
 import CardSimulador from "../components/CardSimulador";
 import YaguareteHeader from "../components/YaguareteHeader";
 import ResultadoSimulador from "../components/ResultadoSimulador";
+import Footer from "../components/Footer";
 
 function Simulador(props) {
+  const [litrosAgua, setLitrosAgua] = useState("");
+  const [co2, setCo2] = useState("");
+  const [vertederos, setVertederos] = useState("");
+  const [arboles, setArboles] = useState("");
+
   return (
     <View style={styles.container}>
+      <View style={styles.margenSeguridad}></View>
       <View style={styles.scrollArea1}>
         <ScrollView
           contentContainerStyle={styles.scrollArea1_contentContainerStyle}
@@ -25,10 +32,25 @@ function Simulador(props) {
               para el cuidado del Medio Ambiente.
             </Text>
           </View>
-          <CardSimulador style={styles.cardSimulador}></CardSimulador>
-          <ResultadoSimulador
-            style={styles.resultadoSimulador}
-          ></ResultadoSimulador>
+          <CardSimulador
+            style={styles.cardSimulador}
+            setLitrosAgua={setLitrosAgua}
+            setCo2={setCo2}
+            setVertederos={setVertederos}
+            setArboles={setArboles}
+          ></CardSimulador>
+          {litrosAgua > 0 || co2 > 0 || vertederos > 0 || arboles > 0 ? (
+            <ResultadoSimulador
+              style={styles.resultadoSimulador}
+              litrosAgua={litrosAgua}
+              co2={co2}
+              vertederos={vertederos}
+              arboles={arboles}
+            ></ResultadoSimulador>
+          ) : (
+            <ResultadoSimulador style={styles.invisible}></ResultadoSimulador>
+          )}
+          <Footer></Footer>
         </ScrollView>
       </View>
     </View>
@@ -36,6 +58,9 @@ function Simulador(props) {
 }
 
 const styles = StyleSheet.create({
+  invisible: {
+    display: "none",
+  },
   container: {
     flex: 1,
     backgroundColor: "rgba(255,255,255,1)",
@@ -58,7 +83,7 @@ const styles = StyleSheet.create({
   simulador: {
     fontFamily: "open-sans-700",
     fontSize: 24,
-    color: "rgba(54,62,63,1)",
+    color: "#c60021",
     paddingBottom: 10,
     textAlign: "center",
   },
@@ -78,16 +103,19 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width,
     height: 200,
   },
+  margenSeguridad: {
+    height: "5%",
+    backgroundColor: "rgba(255,255,255,1)",
+  },
   header: {
     width: Dimensions.get("window").width,
-    height: 115,
-    backgroundColor: "rgba(193,193,193,1)",
-    marginTop: 0,
+    height: 100,
+    backgroundColor: "#c60021",
   },
   yaguareteHeader: {
-    height: 115,
+    height: 100,
     width: Dimensions.get("window").width,
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#c60021",
   },
 });
 

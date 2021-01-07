@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "yaguarete-reciclaje-app",
+  "private_key_id": "5cf575b5359e1bd6081b4c59e6160b7860be9be0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC5wJD7eoqoyaR3\nfVM6OUiDS2GyaTBAz1WXZ527aGEJ9ei0Lvr71P30GEq7pF5pzl17xSjECXsq6ryZ\nz6i5h8bb88rEycFAY90iDj/lSX4A9ZjmKtrey56jxn3jil95Lwu1kz1dMTfxx4N+\n9W1leZY/WaJ3BTB89nhwjAbEfK4ENqmLZRnsjZOsqoc9CYI0dUV0Z6sPWOYGHHCY\nJSAPHkSiqeGksyAwCJ/tyb13gk8RqJsWGYYr4t/NQeGysF43tMFU68d5IaaUlSgf\nA5szZ/RXrlb3fFXjpprgnF1FUx1mh0JjJqXcQ3vHxb4fE0ZT8ewFIQiDmb85gd6s\ns/UWdBjTAgMBAAECggEAI8sIBPVxh6HHZ+EF6xfDsc0SR9M+IZbyOskUG1s7K7Sv\ngRz2bxV1VBZkPDEpokDKQcHVn6TmD3iJHChoLkwMFTEulun7q6EyqM/PHysgtSWe\nL2f9oeXhrVRfyLtOt2bJ3lS/g9gqnBPiclHvoRijS5TFmiKtW78QqTtKSI1v6M6c\nmuCfUvSnKmkDcYbJl/3/vMaZ0/1OZmNIC+i0si01b5z+F1H/UV2DEQ4egBgrcBmL\nBVtCYcIdO7f19XPjxo0JEjZgWN+aZO4e7EcTLw6kOxOr6uGLgBHz2C1fa0EjDkXp\nbzoyi9sojOLrFB10S3QU/FVx5HmJpOOGhp/BKz1/MQKBgQD/N306IElQyiqT6FzZ\nJbXBshFr2AM3RLV5RIG7BZgyT9Bwmp0Xai1pyOujOeXYmX4gJObbplvofeEpdIE5\nv1y+msdCuSj50aJB3dmY336/i4p3nGhMn2OcCdS/b21ivM4LimjUUk6JG8aU4LTC\n0agfShL/cqtzd4IRWAY7DGQHwwKBgQC6UoCd34E+9f9Zs5oJ2U9tpboP7kiCIjxq\n1zIlLIOykG0DxOMb8928mBZvqTBssWnRAeAyRSJwd3szcgL3S8fOXEvauhLHfSx0\nGNgKqB9tTNOGrTMGFOh+nlGk22j93XzZ8GVRN/Giq0cYenQdbEkz9JZJVCm9cUY1\nBFtY23mpsQKBgA22LHsv+uBlTC5QIJTmCsLST09M9rdEcL+IJ7Qlk8y4LwmttNzq\nLnBthANr++ZMMNOHSAPrBysRgERa5wp0NoZjCGuUSRhK4/3H7oXhFA00cQcGFzBu\nq8pZWN3EHctdO3CxSfqGRYPmQyAChpOk8fRkZWrl/UIh3JIT+Zm4i7NDAoGBAIzh\n6SJ2Z3HF7AhVhzm/ORG9aAy3rdfIL0rR4La/C+2uyt84tkjigl0h2oUftt/Y3hwN\ngQpBwCKuFVf280st36ynmSuP2rdAbKZ0Spb0PJ8WojKJL7V/hbSH3U/8H00ldkwM\nO2/ID0timuVlYfsFb+x7Gk/j9ZOq3N0lqDRt73ZhAoGBAJXwDkMrpVD6MqspsprF\nJki2vz+6M+PTbL4X4snlH2s3J9jAFJQDGDS8qS9OOjMDEDJRT/j/7WISGpCv0GKE\nuEa3Pe9klIVRCoRm7gmkIccJjljKy9Ix987256uklstu3Pq6BWflJ7P7L5+qxZrC\n1dusTKQ6cUxAL1awMAscDjwT\n-----END PRIVATE KEY-----\n",
+  "client_email": "yaguarete-reciclaje-app@yaguarete-reciclaje-app.iam.gserviceaccount.com",
+  "client_id": "115154028983596097939",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/yaguarete-reciclaje-app%40yaguarete-reciclaje-app.iam.gserviceaccount.com"
+}

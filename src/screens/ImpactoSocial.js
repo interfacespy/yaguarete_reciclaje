@@ -9,10 +9,12 @@ import {
 } from "react-native";
 import YaguareteHeader from "../components/YaguareteHeader";
 import ImpactoSocialCard2 from "../components/ImpactoSocialCard2";
+import Footer from "../components/Footer";
 
 function ImpactoSocial(props) {
   return (
     <View style={styles.container}>
+      <View style={styles.margenSeguridad}></View>
       <View style={styles.scrollArea}>
         <ScrollView
           contentContainerStyle={styles.scrollArea_contentContainerStyle}
@@ -37,6 +39,7 @@ function ImpactoSocial(props) {
           <ImpactoSocialCard2
             style={styles.impactoSocialCard2}
           ></ImpactoSocialCard2>
+          <Footer></Footer>
         </ScrollView>
       </View>
     </View>
@@ -71,7 +74,7 @@ const styles = StyleSheet.create({
   impactoSocial: {
     fontFamily: "open-sans-700",
     fontSize: 24,
-    color: "rgba(54,62,63,1)",
+    color: "#c60021",
     paddingBottom: 10,
     textAlign: "center",
   },
@@ -86,21 +89,25 @@ const styles = StyleSheet.create({
   image: {
     width: Dimensions.get("window").width,
     height: 255,
-   // top: -10,
+    // top: -10,
   },
-  
+
   impactoSocialCard2: {
     width: Dimensions.get("window").width,
   },
+  margenSeguridad: {
+    height: "5%",
+    backgroundColor: "rgba(255,255,255,1)",
+  },
   header: {
     width: Dimensions.get("window").width,
-    height: 115,
-    backgroundColor: "rgba(193,193,193,1)",
+    height: 100,
+    backgroundColor: "#c60021",
   },
   yaguareteHeader: {
-    height: 115,
+    height: 100,
     width: Dimensions.get("window").width,
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#c60021",
   },
 });
 

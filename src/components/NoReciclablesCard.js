@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Image, Text, Dimensions } from "react-native";
-import { Center } from "@builderx/utils";
 
 function NoReciclablesCard(props) {
   return (
@@ -25,7 +24,7 @@ function NoReciclablesCard(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FFF",
+    backgroundColor: "#c60021",
     overflow: "hidden",
     flex: 1,
   },
@@ -41,7 +40,7 @@ const styles = StyleSheet.create({
     left: 15,
     position: "absolute",
     fontFamily: "open-sans-700",
-    color: "rgba(54,62,63,1)",
+    color: "#FFF",
     width: Dimensions.get("window").width - 40,
     height: 20,
   },
@@ -50,9 +49,9 @@ const styles = StyleSheet.create({
     left: 15,
     position: "absolute",
     fontFamily: "open-sans-regular",
-    color: "rgba(54,62,63,1)",
+    color: "#FFF",
     width: Dimensions.get("window").width - 40,
-    height: 120,
+    height: 140,
   },
 });
 

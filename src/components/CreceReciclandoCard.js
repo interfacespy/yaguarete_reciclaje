@@ -32,7 +32,7 @@ function CreceReciclandoCard(props) {
 const styles = StyleSheet.create({
   container: {
     borderRadius: 1,
-    backgroundColor: "rgba(193,193,193,1)",
+    backgroundColor: "#FFF",
     overflow: "hidden",
     flex: 1,
   },
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   creceReciclando: {
     fontFamily: "open-sans-700",
     fontSize: 24,
-    color: "rgba(255,255,255,1)",
+    color: "#c60021",
     paddingBottom: 12,
     textAlign: "center",
     alignSelf: "center",

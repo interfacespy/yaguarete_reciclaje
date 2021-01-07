@@ -15,19 +15,19 @@ const styles = StyleSheet.create({
     borderColor: "#D9D5DC",
     backgroundColor: "transparent",
     flexDirection: "row",
-    paddingLeft: 16
+    alignItems: "center",
   },
   inputStyle: {
     color: "#000",
-    paddingRight: 5,
+    paddingRight: 16,
     fontSize: 16,
     alignSelf: "stretch",
     flex: 1,
     lineHeight: 16,
     paddingTop: 14,
     paddingBottom: 8,
-    paddingLeft: 30
-  }
+    marginLeft: 15,
+  },
 });
 
 export default TxtCorreo;
