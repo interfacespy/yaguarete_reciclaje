@@ -20,6 +20,14 @@ function Login(props) {
   var [passError, setPassError] = useState("");
   var [email, setEmail] = useState("");
   var [password, setPassword] = useState("");
+  var [editable, setEditable] = useState(true);
+
+  if (editable) {
+    setTimeout(() => {
+      setEditable(true);
+    }, 100);
+  }
+
   var ingresar = () => {
     if (email == "") {
       setEmailError("Email es un campo requerido.");
@@ -84,7 +92,11 @@ function Login(props) {
           resizeMode="contain"
           style={styles.image1}
         ></Image>
-        <UserLabel style={styles.userLabel} setEmail={setEmail}></UserLabel>
+        <UserLabel
+          style={styles.userLabel}
+          setEmail={setEmail}
+          editable={editable}
+        ></UserLabel>
         <Text style={{ color: "white" }}>{emailError}</Text>
         <PasswordLabel
           style={styles.passwordLabel}

@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width,
   },
   margenSeguridad: {
-    height: "3%",
+    height: "5%",
     backgroundColor: "rgba(255,255,255,1)",
   },
   header: {

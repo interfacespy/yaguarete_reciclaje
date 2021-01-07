@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "yaguareteMapComp",
-    "slug": "yaguaretemapcomp",
-    "version": "1.0.0",
+    "name": "Yaguarete Reciclaje  ",
+    "slug": "yaguarete-reciclaje",
+    "version": "7.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -22,20 +22,29 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": ""
+    "description": "",
+    "android": {
+      "package": "com.silvanaenciso.yaguaretereciclaje",
+      "versionCode": 7,
+      "permissions": [
+        "ACCESS_FINE_LOCATION"
+      ]
+    }
   },
   "android": {
-    "package": "com.company",
+    "package": "com.interfacespy.yaguarete-reciclaje",
     "config": {
       "googleMaps": {
-        "apiKey": "AIzaSyAwrY8ezDQ4b8-lJyrtbsrabbfqmMGjFiU"
+        "apiKey": "AIzaSyAtfhPbpyY1pRM7nRgZJ3FC53cKB7ATqw8"
       }
     },
     "userInterfaceStyle": "light"
   },
   "ios": {
     "supportsTablet": true,
-    "userInterfaceStyle": "light"
+    "userInterfaceStyle": "light",
+    "bundleIdentifier": "com.interfacespy.yaguarete-reciclaje",
+    "buildNumber": "1.0.0"
   },
   "description": ""
 }

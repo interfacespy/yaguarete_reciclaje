@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     borderColor: "#c60021",
   },
   margenSeguridad: {
-    height: "3%",
+    height: "5%",
     backgroundColor: "rgba(255,255,255,1)",
   },
   header: {

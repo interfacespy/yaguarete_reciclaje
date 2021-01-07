@@ -10,6 +10,7 @@ import {
   ActivityIndicator,
 } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+import configData from "../../config.json";
 
 const Asuncion = {
   latitude: -25.2819,
@@ -23,7 +24,9 @@ function PuntosCompraCard(props) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://192.168.0.106:8069/backend_api/get_res_partners", {
+    var url = configData.SERVER_URL + "/backend_api/get_res_partners";
+    console.log(url);
+    fetch(url, {
       method: "GET",
     })
       .then((response) => response.json())

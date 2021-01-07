@@ -6,6 +6,7 @@ function UserLabel(props) {
   return (
     <View style={[styles.container, props.style]}>
       <TextInput
+        caretHidden
         placeholder="Usuario"
         style={styles.inputStyle}
         onChangeText={(text) => props.setEmail(text)}

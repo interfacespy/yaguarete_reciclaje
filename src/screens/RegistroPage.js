@@ -29,6 +29,14 @@ function RegistroPage(props) {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
 
+  var [editable, setEditable] = useState(true);
+
+  if (editable) {
+    setTimeout(() => {
+      setEditable(true);
+    }, 100);
+  }
+
   var userLogin = () => {
     if (latitude == "" && longitude == "") {
       setUbiError("La ubicación es requerida");
@@ -60,13 +68,16 @@ function RegistroPage(props) {
       }
     }
     if (email != "" && password != "" && name != "") {
-      fetch(configData.SERVER_URL + "/res_partner/create", {
+      var url = configData.SERVER_URL + "/backend_api/res_partner/create";
+      console.log(url);
+      fetch(url, {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          jsonrpc: "2.0",
           params: {
             mail: email,
             user: name,
@@ -129,9 +140,11 @@ function RegistroPage(props) {
             <Text style={styles.campo}>E-mail:</Text>
             <View style={styles.input}>
               <TextInput
+                caretHidden
                 style={styles.inputStyle}
                 onChangeText={(text) => setEmail(text)}
                 value={email}
+                editable={editable}
               ></TextInput>
             </View>
             <Text style={{ color: "white" }}>{emailError}</Text>
@@ -279,7 +292,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width,
   },
   margenSeguridad: {
-    height: "3%",
+    height: "5%",
     backgroundColor: "rgba(255,255,255,1)",
   },
   header: {
